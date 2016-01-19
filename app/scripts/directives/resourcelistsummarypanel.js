@@ -7,7 +7,7 @@
  * # resourceListSummaryPanel
  */
 angular.module('taaTaskManagerApp')
-  .directive('resourceListSummaryPanel', function () {
+  .directive('resourceListSummaryPanel', ['User', function(User) {
     return {
       restrict: 'E',
       scope: {
@@ -18,6 +18,10 @@ angular.module('taaTaskManagerApp')
       },
       templateUrl: function(tElement, tAttrs) {
         return tAttrs.templateUrl;
+      },
+      link: function (scope, element, attrs) {
+        scope.users = User.query();
+        console.log(scope.users);
       }
     };
-  });
+  }]);
