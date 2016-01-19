@@ -7,9 +7,19 @@
                               when="labels">
                 </ng-pluralize>
             </i>
-            <ul>
-                <li ng-repeat="item in collection">{{ item.summary }}</li>
-            </ul>
+
+            <table st-table="collection" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ panelTitle }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in collection">
+                    <td>{{row.summary}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

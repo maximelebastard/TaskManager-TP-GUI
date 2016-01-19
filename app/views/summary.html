@@ -2,6 +2,7 @@
     <!-- Epics panel -->
     <resource-list-summary-panel
             panel-title="Epics"
+            template-url="views/resourcelistsummarypanel.html"
             labels="{'0': 'No epic',
                      'one': '1 epic',
                      'other': '{} epics'}"
@@ -11,19 +12,46 @@
     <!-- Stories panel -->
     <resource-list-summary-panel
             panel-title="Stories"
+            template-url="views/resourcelistsummarypanel.html"
             labels="{'0': 'No story',
                      'one': '1 story',
                      'other': '{} stories'}"
             collection="stories"
             width="6"/>
 </div>
+
+<div class="row">
+    <!-- Sprints panel -->
+    <resource-list-summary-panel
+            panel-title="Sprints"
+            template-url="views/resourcelistsummarypanel.html"
+            labels="{'0': 'No sprint',
+                     'one': '1 sprint',
+                     'other': '{} sprints'}"
+            collection="tasks"
+            width="12"/>
+</div>
 <div class="row">
     <!-- Tasks panel -->
     <resource-list-summary-panel
             panel-title="Tasks"
+            template-url="views/resourcelistsummarypanel.html"
             labels="{'0': 'No task',
                      'one': '1 task',
                      'other': '{} tasks'}"
             collection="tasks"
             width="12"/>
 </div>
+
+<div class="row">
+    <!-- Users panel -->
+    <resource-list-summary-panel
+            panel-title="Users"
+            template-url="views/resourcelistsummarypanel.html"
+            labels="{'0': 'No user',
+                     'one': '1 user',
+                     'other': '{} users'}"
+            collection="users"
+            width="6"/>
+</div>
+
