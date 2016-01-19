@@ -1,0 +1,20 @@
+<div class="col-md-{{ width }}">
+    <div class="panel">
+        <div class="panel-body">
+            <h2>{{ panelTitle }}</h2>
+            <i>
+                <ng-pluralize count="collection.length"
+                              when="labels">
+                </ng-pluralize>
+            </i>
+
+            <table st-table="collection" class="table table-striped">
+                <tbody>
+                <tr ng-repeat="row in collection">
+                    <td>{{row.name}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

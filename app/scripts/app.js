@@ -18,7 +18,8 @@ angular
         'ngSanitize',
         'ngTouch',
         'ui.bootstrap.progressbar',
-        'ui.bootstrap.tpls'
+        'ui.bootstrap.tpls',
+        'xeditable'
     ])
     .config(['$routeProvider','$httpProvider', function($routeProvider) {
         $routeProvider

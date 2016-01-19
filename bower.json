@@ -13,7 +13,8 @@
     "angular-touch": "^1.4.0",
     "angular-mocks": "^1.4.0",
     "angular-smart-table": "~2.1.6",
-    "angular-bootstrap": "~1.1.0"
+    "angular-bootstrap": "~1.1.0",
+    "angular-xeditable": "~0.1.9"
   },
   "appPath": "app",
   "moduleName": "taaTaskManagerApp",

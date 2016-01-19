@@ -24,23 +24,73 @@
     <!-- Sprints panel -->
     <resource-list-summary-panel
             panel-title="Sprints"
-            template-url="views/resourcelistsummarypanel.html"
+            template-url="views/sprintssummarypanel.html"
             labels="{'0': 'No sprint',
                      'one': '1 sprint',
                      'other': '{} sprints'}"
-            collection="tasks"
+            collection="sprints"
             width="12"/>
 </div>
 <div class="row">
     <!-- Tasks panel -->
-    <resource-list-summary-panel
+    <!-- I have scope issues with the directive for creation, so I don't use it-->
+    <!--<resource-list-summary-panel
             panel-title="Tasks"
             template-url="views/taskssummarypanel.html"
             labels="{'0': 'No task',
                      'one': '1 task',
                      'other': '{} tasks'}"
             collection="tasks"
-            width="12"/>
+            width="12"
+            form-entity="newTask"
+            update-method="updateTask($data)"
+            create-method="createTask(newTask)"
+            delete-method="deleteTask(task)"/> -->
+
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-body">
+                <h2>Tasks</h2>
+                <i>
+                    <ng-pluralize count="tasks.length"
+                                  when="{'0': 'No task',
+                     'one': '1 task',
+                     'other': '{} tasks'}">
+                    </ng-pluralize>
+                </i>
+
+                <table st-table="collection" class="table table-striped">
+                    <thead>
+                    <th>Summary</th>
+                    <th>Worker</th>
+                    <th>Done?</th>
+                    <th>Progress</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="task in tasks">
+                        <td editable-text="task.summary" onaftersave="updateTask(task)">{{task.summary}}</td>
+                        <td>{{task.worker.firstname}} {{task.worker.lastname}}</td>
+                        <td editable-checkbox="task.done" onaftersave="updateTask(task)">{{task.done ? "Yes" : "No" }}</td>
+                        <td>
+                            <uib-progressbar
+                                    class="progress-striped active"
+                                    max="task.timeRequiredInHours"
+                                    value="task.timeSpentInHours"
+                                    type="{{ task.timeSpentInHours > task.timeRequiredInHours ? 'danger' : 'null' }}"
+                                    ><i>{{task.timeSpentInHours}} / {{task.timeRequiredInHours}}</i>
+                            </uib-progressbar>
+                        </td>
+                        <td><button ng-click="deleteTask(task)">Del.</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <form name="new-task-form" class="form-horizontal" role="form" ng-submit="createTask(newTask)">
+                    <div ng-include="'views/formnewtask.html'"></div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
