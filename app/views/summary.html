@@ -1,11 +1,11 @@
 <div class="row">
 
     <!-- Epics panel -->
-    <div class="col-md-6" ng-controller="EpicCtrl">
+    <div class="col-md-6">
         <div class="panel">
             <div class="panel-body">
                 <h2>Epics</h2>
-                Toto
+                <p ng-repeat="epic in epics">{{ epic.summary }}</p>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
     <!-- Stories panel -->
     <div class="col-md-6">
         <div class="panel">
-            <div class="panel-body" ng-controller="StoryCtrl">
+            <div class="panel-body">
                 <h2>Stories</h2>
                 Toto
             </div>

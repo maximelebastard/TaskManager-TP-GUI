@@ -8,10 +8,6 @@
  * Controller of the taaTaskManagerApp
  */
 angular.module('taaTaskManagerApp')
-  .controller('SummaryCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SummaryCtrl', function ($scope, Epic) {
+    $scope.epics = Epic.query();
   });
