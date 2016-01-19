@@ -1,23 +1,29 @@
 <div class="row">
-
     <!-- Epics panel -->
-    <div class="col-md-6">
-        <div class="panel">
-            <div class="panel-body">
-                <h2>Epics</h2>
-                <p ng-repeat="epic in epics">{{ epic.summary }}</p>
-            </div>
-        </div>
-    </div>
+    <resource-list-summary-panel
+            panel-title="Epics"
+            labels="{'0': 'No epic',
+                     'one': '1 epic',
+                     'other': '{} epics'}"
+            collection="epics",
+            width="6"/>
 
     <!-- Stories panel -->
-    <div class="col-md-6">
-        <div class="panel">
-            <div class="panel-body">
-                <h2>Stories</h2>
-                Toto
-            </div>
-        </div>
-    </div>
-
+    <resource-list-summary-panel
+            panel-title="Stories"
+            labels="{'0': 'No story',
+                     'one': '1 story',
+                     'other': '{} stories'}"
+            collection="stories"
+            width="6"/>
+</div>
+<div class="row">
+    <!-- Tasks panel -->
+    <resource-list-summary-panel
+            panel-title="Tasks"
+            labels="{'0': 'No task',
+                     'one': '1 task',
+                     'other': '{} tasks'}"
+            collection="tasks"
+            width="12"/>
 </div>

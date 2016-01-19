@@ -1,0 +1,15 @@
+<div class="col-md-{{ width }}">
+    <div class="panel">
+        <div class="panel-body">
+            <h2>{{ panelTitle }}</h2>
+            <i>
+                <ng-pluralize count="collection.length"
+                              when="labels">
+                </ng-pluralize>
+            </i>
+            <ul>
+                <li ng-repeat="item in collection">{{ item.summary }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
