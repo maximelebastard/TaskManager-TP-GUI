@@ -9,9 +9,14 @@
             </i>
 
             <table st-table="collection" class="table table-striped">
+                <thead>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                </thead>
                 <tbody>
-                <tr ng-repeat="row in collection">
-                    <td>{{row.summary}}</td>
+                <tr ng-repeat="user in collection">
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
                 </tr>
                 </tbody>
             </table>

@@ -16,9 +16,11 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
+        'ngTouch',
+        'ui.bootstrap.progressbar',
+        'ui.bootstrap.tpls'
     ])
-    .config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider) {
+    .config(['$routeProvider','$httpProvider', function($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/summary.html',

@@ -1,0 +1,37 @@
+<div class="col-md-{{ width }}">
+    <div class="panel">
+        <div class="panel-body">
+            <h2>{{ panelTitle }}</h2>
+            <i>
+                <ng-pluralize count="collection.length"
+                              when="labels">
+                </ng-pluralize>
+            </i>
+
+            <table st-table="collection" class="table table-striped">
+                <thead>
+                    <th>Summary</th>
+                    <th>Worker</th>
+                    <th>Done?</th>
+                    <th>Progress</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="task in collection">
+                    <td>{{task.summary}}</td>
+                    <td>{{task.worker.firstname}} {{task.worker.lastname}}</td>
+                    <td>{{task.done ? "Yes" : "No" }}</td>
+                    <td>
+                        <uib-progressbar
+                                class="progress-striped active"
+                                max="task.timeRequiredInHours"
+                                value="task.timeSpentInHours"
+                                type="{{ task.timeSpentInHours > task.timeRequiredInHours ? 'danger' : 'null' }}"
+                                ><i>{{task.timeSpentInHours}} / {{task.timeRequiredInHours}}</i>
+                        </uib-progressbar>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
